@@ -1,0 +1,324 @@
+//Archivo principal
+
+// Variables
+$primary-color: #C77FD4;
+$secondary-color: rgba(135, 19, 146, 0.5);
+$dark-color: #222;
+$light-color: #f9f9f9;
+$text-color: #333;
+$text-light: #ccc;
+$text-gray: #d3d3d3;
+$shadow-sm: 0 2px 6px rgba(0,0,0,0.1);
+$shadow-md: 0 6px 16px rgba(0,0,0,0.15);
+$transition: all 0.3s ease;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+
+// Mixins
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// Estilos
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: $light-color;
+  font-family: 'Poppins', sans-serif;
+  color: $text-color;
+  margin: 0;
+}
+
+// Header
+.page__header {
+  background-color: #030303 !important;
+
+  .header__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+
+    @include respond-to($breakpoint-md) {
+      grid-template-columns: auto 1fr;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .header__logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: $transition;
+    justify-self: center;
+
+    @include respond-to($breakpoint-md) {
+      justify-self: start;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      height: 100px;
+    }
+  }
+
+  .header__nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include respond-to($breakpoint-md) {
+      justify-content: end;
+      gap: 1rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      gap: 1.5rem;
+    }
+  }
+
+  .header__nav-link {
+    color: $text-gray !important;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem !important;
+    transition: $transition !important;
+    text-decoration: none !important;
+    border-radius: 32px !important;
+    text-align: center;
+
+    &:hover {
+      color: white !important;
+      background-color: $secondary-color !important;
+    }
+
+    &:focus {
+      color: $primary-color !important;
+    }
+  }
+}
+
+// Hero
+.hero {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template: 1fr / 1fr;
+  margin-left: calc(-50vw + 50%);
+
+  &__slide {
+    max-height: 700px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    grid-area: 1 / 1;
+  }
+
+  &__image {
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__content {
+    grid-area: 1 / 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    width: 100%;
+
+    @include respond-to($breakpoint-md) {
+      font-size: 2rem;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__text {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+
+    @include respond-to($breakpoint-md) {
+      width: 100%;
+    }
+
+    @include respond-to($breakpoint-lg) {
+      width: 70%;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Sections
+.section-presentation {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: $shadow-sm;
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+
+  @include respond-to($breakpoint-lg) {
+    padding: 3rem;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    color: $text-color;
+    font-weight: 500;
+  }
+}
+
+.section-pillars {
+  margin: 3rem 0;
+  display: grid;
+  gap: 2rem;
+
+  &__title {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include respond-to($breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to($breakpoint-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__card {
+    border: none !important;
+    box-shadow: $shadow-sm;
+    transition: $transition;
+    height: 100%;
+    border-radius: 8px !important;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateY(-5px);
+    }
+  }
+
+  &__card-body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 1.5rem;
+  }
+
+  &__card-title {
+    color: $primary-color !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem;
+  }
+}
+
+// Footer
+.page__footer {
+  background-color: $dark-color;
+  color: $text-light;
+  padding: 1.5rem 0;
+  display: grid;
+  place-items: center;
+
+  .footer__content {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer__text {
+    margin-bottom: 1rem;
+  }
+
+  .footer__links {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__link {
+    color: $text-light !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: $transition !important;
+
+    &:hover {
+      color: $primary-color !important;
+    }
+  }
+}
+
+// Bootstrap
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 1;
+}
+
+.carousel-indicators {
+  z-index: 1;
+}
+.carousel-caption{
+  left: 0 !important;
+  padding-top: 2rem !important;
+}

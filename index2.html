@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/style2.css">
+    <title>Portafolio Tamara Zamorano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+  <!-- Bloques - Elementos - Modificador - BEM Nomenclatura de clases | Sass cobra sentido con BEM o alguna otra nomenclatura de clases-->
+<body class="page">
+  <header class="page__header">
+    <nav class="container header__container" aria-label="Menú principal">
+      <div class="header__logo">
+        <img src="img/logo-tamza-gris.png" alt="logotipo-tamza" class="header__logo-img" />
+      </div>
+      <ul class="header__nav-list nav">
+        <li class="nav-item"><a class="header__nav-link nav-link" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="header__nav-link nav-link" href="#">Proyectos</a></li>
+        <li class="nav-item"><a class="header__nav-link nav-link" href="#">Sobre mí</a></li>
+        <li class="nav-item"><a class="header__nav-link nav-link" href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page__main">
+    <section class="hero" aria-label="Proyectos destacados">
+      <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel" aria-roledescription="carousel">
+        <div class="carousel-inner shadow-sm">
+          <div class="carousel-item active hero__slide">
+            <img src="img/editorial.jpeg" class="hero__image d-block w-100" alt="Diseño UX/UI y FrontEnd" />
+            <div class="hero__content carousel-caption d-flex">
+              <h5 class="hero__title">Diseño UX/UI</h5>
+              <p class="hero__text">Combino experiencia de usuario e interfaz visual para crear soluciones digitales intuitivas, accesibles y visualmente atractivas, pensando en cada detalle del recorrido del usuario.</p>
+            </div>
+          </div>
+          <div class="carousel-item hero__slide">
+            <img src="img/editorial.jpeg" class="hero__image d-block w-100" alt="Rediseño web corporativa para PyME tecnológica" />
+            <div class="hero__content carousel-caption d-flex">
+              <h5 class="hero__title">Desarrollo Front-End</h5>
+              <p class="hero__text">Construyo interfaces dinámicas y responsivas con tecnologías modernas, garantizando rendimiento, compatibilidad y una experiencia óptima en todos los dispositivos.</p>
+            </div>
+          </div>
+          <div class="carousel-item hero__slide">
+            <img src="img/editorial.jpeg" class="hero__image d-block w-100" alt="Proyecto Editorial" />
+            <div class="hero__content carousel-caption d-flex">
+              <h5 class="hero__title">Diseño en Comunicación Visual</h5>
+              <p class="hero__text">Desarrollo soluciones gráficas coherentes y funcionales, combinando estética y propósito para reforzar la identidad de marca en entornos digitales.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev" aria-label="Proyecto anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next" aria-label="Proyecto siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="container mb-5">
+      <section class="section-presentation mt-5" aria-label="Presentación personal">
+        <h1>Tamara Zamorano</h1>
+        <h2 class="fw-semibold">Diseñadora UX/UI & Frontend Developer</h2>
+        <p class="mt-3">
+          Diseño experiencias digitales funcionales y con identidad visual clara. Especializada en
+          comunicación visual, accesibilidad y desarrollo frontend moderno.
+        </p>
+      </section>
+
+      <section id="pilares" class="section-pillars" aria-labelledby="titulo-pilares">
+        <h3 id="titulo-pilares" class="section-pillars__title">Pilares de trabajo</h3>
+        <div class="section-pillars__grid row row-cols-1 row-cols-md-3 g-4">
+          <article class="col">
+            <div class="section-pillars__card card h-100">
+              <div class="card-body">
+                <h5 class="section-pillars__card-title card-title">Experiencia de Usuario</h5>
+                <p class="card-text">
+                  Diseño centrado en las personas, con enfoque en usabilidad, accesibilidad y toma de
+                  decisiones basada en datos.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="col">
+            <div class="section-pillars__card card h-100">
+              <div class="card-body">
+                <h5 class="section-pillars__card-title card-title">Identidad Visual</h5>
+                <p class="card-text">Comunicación visual coherente que fortalece la identidad de marca en entornos digitales.</p>
+              </div>
+            </div>
+          </article>
+          <article class="col">
+            <div class="section-pillars__card card h-100">
+              <div class="card-body">
+                <h5 class="section-pillars__card-title card-title">Frontend Moderno</h5>
+                <p class="card-text">Implementación responsive, semántica y accesible con buenas prácticas de HTML, CSS y JavaScript.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="page__footer">
+    <div class="container footer__content">
+      <p class="footer__text">&copy; 2025 Tamara Zamorano Saavedra · Diseñadora UX/UI</p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/tamara-zamorano-saavedra/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/tamzamoranos" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:tzamoranos.uxui@gmail.com" class="footer__link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
